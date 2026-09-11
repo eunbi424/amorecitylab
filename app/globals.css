@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* citylab_design.json 토큰을 CSS 변수로 노출 (Tailwind 외 직접 참조용) */
+@layer base {
+  :root {
+    --citylab-primary: #0b3b36;
+    --citylab-secondary: #b08d57;
+    --citylab-ink: #0b0c0c;
+    --citylab-ivory: #faf8f5;
+    --citylab-line: #e8e5e0;
+    --citylab-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-surface-base font-sans text-body text-ink-secondary;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink-primary break-keep;
+    /* 의미 단위로 넣은 줄바꿈이 시각적 균등 분할에 밀리지 않도록 balance 는 쓰지 않는다 */
+    text-wrap: unset;
+  }
+
+  ::selection {
+    background-color: var(--citylab-primary);
+    color: #fff;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--citylab-primary);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* 페이지 좌우 여백 + 최대 폭을 한 번에 잡는 컨테이너 */
+  .container-lab {
+    @apply mx-auto w-full max-w-container px-gutter;
+  }
+
+  .eyebrow {
+    @apply text-eyebrow uppercase text-secondary;
+  }
+
+  .display-serif {
+    @apply font-display font-light;
+  }
+
+  /* 스크롤 진입 리빌 애니메이션 (IntersectionObserver 없이 CSS만 사용) */
+  .reveal {
+    animation: reveal-rise 1s var(--citylab-ease-entrance) both;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    @apply absolute bottom-0 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-fast ease-standard content-[''];
+  }
+  .link-underline:hover::after {
+    @apply origin-left scale-x-100;
+  }
+
+  .hairline-grid {
+    background-image: linear-gradient(to right, var(--citylab-line) 1px, transparent 1px);
+    background-size: 25% 100%;
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

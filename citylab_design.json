@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json.schemastore.org/base.json",
+  "meta": {
+    "name": "Amore City Lab Design System",
+    "version": "1.0.0",
+    "brand": "아모레시티랩 (Amore City Lab)",
+    "parentBrand": "AMOREPACIFIC",
+    "referenceUrl": "https://www.apgroup.com/int/ko/",
+    "concept": "Modern Luxury Beauty & Science",
+    "designPrinciples": [
+      "여백이 주인공이다 — 콘텐츠보다 공간이 먼저 브랜드를 말한다",
+      "무채색 기반의 절제된 팔레트 위에 단 하나의 시그니처 컬러만 허용한다",
+      "과학적 신뢰는 데이터를 정갈한 타이포그래피로 보여줄 때 완성된다",
+      "장식을 더하지 않고 정렬과 비율로 럭셔리를 표현한다",
+      "모든 인터랙션은 느리고 부드럽게 — 서두르지 않는 브랜드 태도"
+    ],
+    "keywords": ["Holistic Beauty", "Skin Science", "Personalized Diagnosis", "Urban Sanctuary", "Quiet Luxury"]
+  },
+
+  "color": {
+    "primary": {
+      "DEFAULT": "#0B3B36",
+      "50": "#F2F7F6",
+      "100": "#DCE8E6",
+      "200": "#B6D0CC",
+      "300": "#87B1AB",
+      "400": "#5A8F88",
+      "500": "#356E67",
+      "600": "#1C5049",
+      "700": "#0B3B36",
+      "800": "#082B27",
+      "900": "#051B19",
+      "description": "메인 컬러. 아모레퍼시픽의 녹차 헤리티지와 과학적 신뢰감을 담은 딥 자데 그린."
+    },
+    "secondary": {
+      "DEFAULT": "#B08D57",
+      "100": "#F6EFE4",
+      "300": "#DCC49B",
+      "500": "#B08D57",
+      "700": "#8A6C3E",
+      "description": "서브 컬러. 럭셔리 뷰티의 온기를 더하는 샴페인 골드. 포인트와 강조에만 제한적으로 사용."
+    },
+    "accent": {
+      "sand": "#E7DED2",
+      "mist": "#DCE5E4",
+      "clay": "#C9B7A4",
+      "lilac": "#E1B6D1",
+      "lilacSoft": "#F6EAF2",
+      "description": "섹션 구분과 카드 배경에 쓰이는 중성 톤 액센트. lilac 은 공식 'Skin Expert' 프로필 카드의 헤더 컬러를 그대로 채취한 값으로, 연구원 소개 영역에만 사용한다."
+    },
+    "background": {
+      "base": "#FFFFFF",
+      "ivory": "#FAF8F5",
+      "muted": "#F2F0EC",
+      "inverse": "#0B0C0C",
+      "overlay": "rgba(11, 12, 12, 0.55)",
+      "description": "화이트와 아이보리를 기본으로 하고, 다크 섹션은 잉크 블랙으로 대비를 만든다."
+    },
+    "text": {
+      "primary": "#0B0C0C",
+      "secondary": "#4A4E4D",
+      "tertiary": "#8A8F8D",
+      "inverse": "#FFFFFF",
+      "onDarkMuted": "rgba(255, 255, 255, 0.66)",
+      "link": "#0B3B36",
+      "description": "본문은 순수 블랙 대신 잉크 블랙을 사용해 인쇄물 같은 부드러운 인상을 준다."
+    },
+    "border": {
+      "subtle": "#E8E5E0",
+      "DEFAULT": "#D8D4CE",
+      "strong": "#0B0C0C",
+      "onDark": "rgba(255, 255, 255, 0.16)"
+    },
+    "state": {
+      "success": "#1C5049",
+      "error": "#A33A2B",
+      "warning": "#B08D57",
+      "info": "#356E67"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "display": ["Cormorant Garamond", "Apple SD Gothic Neo", "Nanum Myeongjo", "serif"],
+      "sans": ["Pretendard", "Pretendard Variable", "Apple SD Gothic Neo", "Noto Sans KR", "system-ui", "sans-serif"],
+      "mono": ["SFMono-Regular", "Menlo", "Consolas", "monospace"],
+      "description": "국문 본문은 Pretendard로 정갈하게, 영문 디스플레이는 세리프로 럭셔리한 격을 만든다."
+    },
+    "scale": {
+      "display-1": { "size": "clamp(2.75rem, 7vw, 6rem)", "lineHeight": "1.02", "letterSpacing": "-0.03em", "weight": 300 },
+      "display-2": { "size": "clamp(2.25rem, 5vw, 4rem)", "lineHeight": "1.08", "letterSpacing": "-0.02em", "weight": 300 },
+      "h1": { "size": "clamp(2rem, 4vw, 3rem)", "lineHeight": "1.16", "letterSpacing": "-0.02em", "weight": 400 },
+      "h2": { "size": "clamp(1.625rem, 3vw, 2.25rem)", "lineHeight": "1.22", "letterSpacing": "-0.015em", "weight": 500 },
+      "h3": { "size": "1.375rem", "lineHeight": "1.35", "letterSpacing": "-0.01em", "weight": 600 },
+      "body-lg": { "size": "1.0625rem", "lineHeight": "1.85", "letterSpacing": "-0.005em", "weight": 400 },
+      "body": { "size": "0.9375rem", "lineHeight": "1.8", "letterSpacing": "0", "weight": 400 },
+      "caption": { "size": "0.8125rem", "lineHeight": "1.6", "letterSpacing": "0.01em", "weight": 400 },
+      "eyebrow": { "size": "0.6875rem", "lineHeight": "1.4", "letterSpacing": "0.22em", "weight": 500, "transform": "uppercase" }
+    }
+  },
+
+  "spacing": {
+    "unit": 4,
+    "scale": {
+      "3xs": "0.25rem",
+      "2xs": "0.5rem",
+      "xs": "0.75rem",
+      "sm": "1rem",
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "3rem",
+      "2xl": "4rem",
+      "3xl": "6rem",
+      "4xl": "8rem",
+      "5xl": "10rem"
+    },
+    "section": {
+      "paddingY": "clamp(4.5rem, 10vw, 9rem)",
+      "gutter": "clamp(1.25rem, 5vw, 4rem)",
+      "gap": "clamp(2rem, 5vw, 4.5rem)"
+    },
+    "container": {
+      "maxWidth": "1280px",
+      "narrowMaxWidth": "768px",
+      "wideMaxWidth": "1536px"
+    }
+  },
+
+  "layout": {
+    "grid": { "columns": 12, "gutter": "1.5rem", "mobileColumns": 4 },
+    "radius": {
+      "none": "0px",
+      "sm": "2px",
+      "DEFAULT": "4px",
+      "md": "8px",
+      "lg": "16px",
+      "pill": "999px",
+      "description": "럭셔리 톤을 위해 라운드는 최소화. 카드는 sharp edge를 기본으로 한다."
+    },
+    "shadow": {
+      "none": "none",
+      "subtle": "0 1px 2px rgba(11, 12, 12, 0.04)",
+      "card": "0 12px 40px -16px rgba(11, 12, 12, 0.14)",
+      "float": "0 24px 70px -24px rgba(11, 12, 12, 0.22)"
+    },
+    "border": { "hairline": "1px" }
+  },
+
+  "motion": {
+    "duration": { "instant": "120ms", "fast": "240ms", "base": "420ms", "slow": "720ms", "reveal": "1000ms" },
+    "easing": {
+      "standard": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "entrance": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "exit": "cubic-bezier(0.4, 0, 1, 1)"
+    },
+    "principles": ["fade + 24px rise 조합의 스크롤 리빌", "hover는 색이 아닌 밑줄과 미세한 이동으로 표현"]
+  },
+
+  "components": {
+    "button": {
+      "primary": {
+        "background": "#0B3B36",
+        "color": "#FFFFFF",
+        "padding": "1rem 2rem",
+        "radius": "999px",
+        "hover": { "background": "#082B27" }
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#0B0C0C",
+        "border": "1px solid #0B0C0C",
+        "padding": "1rem 2rem",
+        "radius": "999px",
+        "hover": { "background": "#0B0C0C", "color": "#FFFFFF" }
+      },
+      "ghost": { "background": "transparent", "color": "#0B3B36", "underlineOnHover": true }
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "border": "1px solid #E8E5E0",
+      "radius": "4px",
+      "padding": "2rem",
+      "hover": { "borderColor": "#0B3B36", "translateY": "-4px" }
+    },
+    "input": {
+      "background": "#FFFFFF",
+      "border": "1px solid #D8D4CE",
+      "radius": "4px",
+      "padding": "0.875rem 1rem",
+      "focus": { "borderColor": "#0B3B36", "ring": "1px solid #0B3B36" }
+    },
+    "eyebrow": { "color": "#B08D57", "letterSpacing": "0.22em", "transform": "uppercase", "size": "0.6875rem" }
+  },
+
+  "assets": {
+    "logo": {
+      "ink": "/brand/citylab-logo-ink.png",
+      "white": "/brand/citylab-logo-white.png",
+      "aspectRatio": "922:268",
+      "usage": "헤더는 ink 버전을 40px 높이로, 다크 섹션·푸터는 white 버전을 사용한다. 최소 여백은 로고 높이의 50%.",
+      "description": "원본 JPG(흰 배경)의 여백을 잘라내고 밝기를 알파로 반전해 만든 배경 투명 PNG."
+    },
+    "space": {
+      "hero": "/brand/citylab-space.jpg",
+      "usage": "위치·공간 페이지 히어로와 홈 공간 섹션. 21:9 또는 3:2로 크롭하며 상단 정렬을 유지한다."
+    },
+    "leaflet": {
+      "src": "/brand/citylab-program-leaflet.jpg",
+      "usage": "진단 프로그램 페이지의 BASIC · INTENSIVE 공식 안내 리플릿. 현장 자료의 사진 원본을 그대로 사용한다."
+    },
+    "researchers": {
+      "portraits": "/researchers/portraits/{id}.jpg",
+      "cards": "/researchers/cards/{id}.png",
+      "usage": "포트레이트는 3:4 비율로 목록에 사용하고, 공식 카드는 원본 1:1 그대로 새 창에서 열어 제공한다."
+    }
+  },
+
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  }
+}
