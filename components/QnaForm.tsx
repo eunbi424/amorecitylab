@@ -195,7 +195,6 @@ export default function QnaForm() {
         >
           {sending ? "전송 중…" : "문의 등록하기"}
         </button>
-        <p className="text-caption text-ink-tertiary">등록 시 담당자 Teams 채널로 즉시 알림이 전송됩니다.</p>
       </div>
 
       <div aria-live="polite" role="status">

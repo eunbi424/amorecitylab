@@ -95,18 +95,6 @@ export default function ProgramsPage() {
                     </li>
                   ))}
                 </ul>
-
-                <h4 className="mt-xl text-body text-ink-primary">사용 장비</h4>
-                <ul className="mt-md flex flex-wrap gap-2">
-                  {program.devices.map((device) => (
-                    <li
-                      key={device}
-                      className="border border-line bg-white px-2.5 py-1.5 text-[0.6875rem] tracking-[0.04em] text-ink-secondary"
-                    >
-                      {device}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               <div>

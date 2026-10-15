@@ -2,6 +2,7 @@
  * 아모레시티랩 사이트 전역 목(mock) 데이터.
  * DB 없이 이 파일 하나만 수정하면 전체 사이트 콘텐츠가 갱신된다.
  */
+import { publicPath } from "./public-path";
 
 export const site = {
   name: "아모레시티랩",
@@ -20,16 +21,16 @@ export const site = {
 
 /** 브랜드 이미지 자산 (원본 비율 그대로 next/image 에 전달) */
 export const brand = {
-  logoInk: { src: "/brand/citylab-logo-ink.png", width: 922, height: 268 },
-  logoWhite: { src: "/brand/citylab-logo-white.png", width: 922, height: 268 },
+  logoInk: { src: publicPath("/brand/citylab-logo-ink.png"), width: 922, height: 268 },
+  logoWhite: { src: publicPath("/brand/citylab-logo-white.png"), width: 922, height: 268 },
   space: {
-    src: "/brand/citylab-space.jpg",
+    src: publicPath("/brand/citylab-space.jpg"),
     width: 3200,
     height: 2133,
     alt: "아모레시티랩 내부 — 유리 진열장과 화이트 톤 상담 데스크, 진단 부스",
   },
   leaflet: {
-    src: "/brand/citylab-program-leaflet.jpg",
+    src: publicPath("/brand/citylab-program-leaflet.jpg"),
     width: 767,
     height: 1024,
     alt: "아모레시티랩 BASIC · INTENSIVE 프로그램 안내 리플릿",
@@ -182,8 +183,8 @@ export const researchers: readonly Researcher[] = [
     credential: "Ph.D.",
     badge: "Skin Expert",
     specialty: "피부 유전자 · 헤어 연구",
-    portrait: "/researchers/portraits/ko-eunbi.jpg",
-    card: "/researchers/cards/ko-eunbi.png",
+    portrait: publicPath("/researchers/portraits/ko-eunbi.jpg"),
+    card: publicPath("/researchers/cards/ko-eunbi.png"),
     education: [
       "이화여자대학교 생명과학과 학사 졸업",
       "이화여자대학교 대학원 석사, 박사 졸업",
@@ -197,7 +198,12 @@ export const researchers: readonly Researcher[] = [
       "2017 세계화장품학회 (IFSCC) 구두 발표 및 수상",
       "2022. 2025 세계화장품학회 (IFSCC) 구두 발표",
     ],
-    certifications: ["피부 미용사 국가기술자격증", "맞춤형 화장품 조제관리사 자격증", "DNA 컨설턴트 자격증"],
+    certifications: [
+      "피부 미용사 국가기술자격증",
+      "맞춤형 화장품 조제관리사 자격증",
+      "DNA 컨설턴트 자격증",
+      "퍼스널컬러리스트 2급",
+    ],
   },
   {
     id: "kim-jihye",
@@ -206,8 +212,8 @@ export const researchers: readonly Researcher[] = [
     credential: "Ph.D.",
     badge: "Skin Expert",
     specialty: "피부 혈관 · 유전자 연구",
-    portrait: "/researchers/portraits/kim-jihye.jpg",
-    card: "/researchers/cards/kim-jihye.png",
+    portrait: publicPath("/researchers/portraits/kim-jihye.jpg"),
+    card: publicPath("/researchers/cards/kim-jihye.png"),
     education: [
       "연세대학교 생화학과 학사 졸업",
       "연세대학교 대학원 석사, 박사 졸업",
@@ -230,8 +236,8 @@ export const researchers: readonly Researcher[] = [
     credential: "측정 연구원",
     badge: "Skin Expert",
     specialty: "맞춤형 화장품 · 피부 측정",
-    portrait: "/researchers/portraits/jo-min.jpg",
-    card: "/researchers/cards/jo-min.png",
+    portrait: publicPath("/researchers/portraits/jo-min.jpg"),
+    card: publicPath("/researchers/cards/jo-min.png"),
     education: [
       "뷰티디자인 학사",
       "건국대학교 향장학과 석사",
@@ -246,6 +252,7 @@ export const researchers: readonly Researcher[] = [
       "네일 자격증",
       "메이크업 2,3급 자격증",
       "두피관리사 자격증",
+      "퍼스널컬러리스트 2급",
     ],
   },
   {
@@ -255,8 +262,8 @@ export const researchers: readonly Researcher[] = [
     credential: "측정 연구원",
     badge: "Skin Expert",
     specialty: "피부 측정 · 뷰티 컨설팅",
-    portrait: "/researchers/portraits/ko-sujeong.jpg",
-    card: "/researchers/cards/ko-sujeong.png",
+    portrait: publicPath("/researchers/portraits/ko-sujeong.jpg"),
+    card: publicPath("/researchers/cards/ko-sujeong.png"),
     education: ["뷰티디자인 학사", "아모레퍼시픽 기술연구원 근무"],
     research: [],
     certifications: [
@@ -270,6 +277,7 @@ export const researchers: readonly Researcher[] = [
       "두피관리 자격증",
       "발관리 자격증",
       "체형관리 자격증",
+      "퍼스널컬러리스트 2급",
     ],
   },
   {
@@ -279,8 +287,8 @@ export const researchers: readonly Researcher[] = [
     credential: "측정 연구원",
     badge: "Skin Expert",
     specialty: "피부 측정 · 메이크업",
-    portrait: "/researchers/portraits/kang-jiye.jpg",
-    card: "/researchers/cards/kang-jiye.png",
+    portrait: publicPath("/researchers/portraits/kang-jiye.jpg"),
+    card: publicPath("/researchers/cards/kang-jiye.png"),
     education: ["화장품학 학사", "아모레퍼시픽 기술연구원 근무"],
     research: [],
     certifications: [
@@ -288,6 +296,8 @@ export const researchers: readonly Researcher[] = [
       "미용(종합) 면허증",
       "미용사 피부 자격증",
       "메이크업 3급 자격증",
+      "두피모발 관리지도사 1급",
+      "퍼스널컬러리스트 2급",
     ],
   },
 ] as const;
@@ -311,7 +321,6 @@ export type Program = {
   services: readonly string[];
   conditions: readonly string[];
   steps: readonly { step: string; title: string; time: string; body: string }[];
-  devices: readonly string[];
   notes: readonly string[];
   bookingUrl: string;
   bookingUrlGlobal: string;
@@ -334,8 +343,8 @@ export const programs: readonly Program[] = [
     focus: "피부 또는 두피 중 1가지 선택",
     services: [
       "피부 또는 두피 중 한 가지를 선택해 정밀 측정",
-      "피부 선택 시: 수분 · 유분 · 탄력 · 모공 · 색소 · 피부결 지표 측정",
-      "두피 선택 시: 각질 · 유분 · 모공 · 모발 밀도 확대 관찰",
+      "피부 선택 시: 유수분, 탄력, 주름, 모공, 색소, 붉은기, 장벽 지표 측정",
+      "두피 선택 시: 모발 밀도 및 굵기, 두피 상태 측정",
       "Skin Expert 연구원과의 1:1 카운셀링",
       "측정 결과 기반 맞춤 솔루션 제안",
     ],
@@ -370,7 +379,6 @@ export const programs: readonly Program[] = [
         body: "결과에 맞는 케어 순서와 제품을 제안하고, 현장에서 직접 테스트할 수 있습니다.",
       },
     ],
-    devices: ["멀티 이미징 스킨 애널라이저", "세보미터 유분 측정기", "200x 디지털 마이크로스코프"],
     notes: [
       "예약은 아모레용산 예약 페이지에서 회원가입 후 진행해 주세요. 국내 고객과 해외 고객용 QR이 각각 마련되어 있습니다.",
       "예약 변경 및 취소는 방문 1일 전까지 가능합니다.",
@@ -393,10 +401,9 @@ export const programs: readonly Program[] = [
     location: "AMORE YONGSAN · 아모레시티랩",
     focus: "피부와 두피 통합 솔루션",
     services: [
-      "피부 정밀 측정 (수분 · 유분 · 탄력 · 모공 · 색소 · 피부결)",
-      "두피 정밀 측정 (각질 · 유분 · 모공 · 모발 밀도)",
+      "피부 정밀 측정 (유수분, 탄력, 주름, 모공, 색소, 붉은기, 장벽)",
+      "두피 정밀 측정 (모발 밀도 및 굵기, 두피 상태)",
       "미래 피부 상태 예측 (future skin condition forecasting)",
-      "피부와 두피를 함께 읽는 통합 솔루션 설계",
       "Skin Expert 연구원과의 1:1 프리미엄 카운셀링",
       "측정 결과 기반 맞춤 루틴 및 제품 제안",
     ],
@@ -430,12 +437,6 @@ export const programs: readonly Program[] = [
         time: "25분",
         body: "현재 데이터로 미래 피부 상태를 예측하고, 피부와 두피를 잇는 맞춤 솔루션을 설계합니다.",
       },
-    ],
-    devices: [
-      "멀티 이미징 스킨 애널라이저",
-      "코네오미터 수분 측정기",
-      "큐토미터 탄력 측정기",
-      "200x 디지털 마이크로스코프",
     ],
     notes: [
       "INTENSIVE는 피부와 두피를 한 번에 측정하므로 BASIC을 같은 날 추가로 예약할 필요는 없습니다.",
