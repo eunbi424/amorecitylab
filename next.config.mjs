@@ -1,11 +1,10 @@
-const basePath = "/amorecitylab";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath,
-  assetPrefix: `${basePath}/`,
+  basePath: "/amorecitylab",
+  assetPrefix: "/amorecitylab/",
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_BASE_PATH: "/amorecitylab",
   },
   images: {
     unoptimized: true,
